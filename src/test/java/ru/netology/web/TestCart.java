@@ -34,4 +34,26 @@ public class TestCart {
         String text = driver.findElement(By.cssSelector("[data-test-id]")).getText();
         assertEquals("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text);
     }
+
+    @Test
+    void shouldTestWithEnglishWords() {
+        driver.get("http://localhost:9999");
+        driver.findElement(By.cssSelector("input[type='text']")).sendKeys("Maximilian Maximilian");
+        driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("+79270000000");
+        driver.findElement(By.cssSelector("span[class='checkbox__box']")).click();
+        driver.findElement(By.cssSelector(".button__text")).submit();
+        String text = driver.findElement(By.cssSelector(".input__sub")).getText();
+        assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", text);
+    }
+
+    @Test
+    void shouldTestWithOneLetter() {
+        driver.get("http://localhost:9999");
+        driver.findElement(By.cssSelector("input[type='text']")).sendKeys("В");
+        driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("+79270000000");
+        driver.findElement(By.cssSelector("span[class='checkbox__box']")).click();
+        driver.findElement(By.cssSelector(".button__text")).submit();
+        String text = driver.findElement(By.cssSelector("[data-test-id]")).getText();
+        assertEquals("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text);
+    }
 }
