@@ -25,7 +25,7 @@ public class TestCart {
     }
 
     @Test
-    void shouldTestV2() {
+    void shouldTestV1() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("input[type='text']")).sendKeys("Василий");
         driver.findElement(By.cssSelector("input[type='tel']")).sendKeys("+79270000000");
