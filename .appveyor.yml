@@ -1,4 +1,4 @@
-image: Visual Studio 2015
+image: Ubuntu
 
 stack: jdk 11
 
@@ -9,7 +9,8 @@ branches:
 build: off
 
 install:
-  - java -jar ./artifacts/app-order.jar &
+ запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
+  - java -jar ./artifacts/app-mbank.jar &
 
 build_script:
   - ./gradlew test --info
