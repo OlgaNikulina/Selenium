@@ -1,6 +1,6 @@
 package ru.netology.web;
 
-import io.github.bonigarcia.seljup.SeleniumExtension;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -26,7 +26,7 @@ public class TestCart {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pepper\\IdeaProjects\\TestCart\\driver\\win\\chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
     @BeforeEach
