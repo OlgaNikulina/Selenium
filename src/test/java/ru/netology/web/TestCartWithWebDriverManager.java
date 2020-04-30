@@ -1,3 +1,5 @@
+
+
 package ru.netology.web;
 
 import io.github.bonigarcia.seljup.SeleniumExtension;
@@ -13,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestCart {
+public class TestCartWithWebDriverManager {
     private WebDriver driver;
 
     public void setupTest() {
@@ -26,7 +28,7 @@ public class TestCart {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pepper\\IdeaProjects\\TestCart\\driver\\win\\chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pepper\\IdeaProjects\\TestCart\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
@@ -35,7 +37,7 @@ public class TestCart {
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
         driver = null;
     }
