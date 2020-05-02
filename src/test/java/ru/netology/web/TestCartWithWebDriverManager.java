@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestCartWithWebDriverManager {
     private WebDriver driver;
 
-    public void setTest() {
+    @BeforeEach
+    public void setUpTest() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -30,6 +31,11 @@ public class TestCartWithWebDriverManager {
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
+
+//    @BeforeEach
+//    public void setupTest() {
+//        driver = new ChromeDriver();
+//    }
 
     @AfterEach
     public void tearDown() {
