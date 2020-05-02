@@ -32,11 +32,6 @@ public class TestCartWithWebDriverManager {
         WebDriverManager.chromedriver().setup();
     }
 
-//    @BeforeEach
-//    public void setupTest() {
-//        driver = new ChromeDriver();
-//    }
-
     @AfterEach
     public void tearDown() {
         driver.quit();
