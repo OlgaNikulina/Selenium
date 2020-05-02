@@ -24,4 +24,3 @@ dependencies {
         systemProperty 'selenide.headless', System.getProperty('selenide.headless')
     }
 }
-
