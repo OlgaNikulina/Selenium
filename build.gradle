@@ -18,6 +18,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     testCompile("io.github.bonigarcia:selenium-jupiter:3.3.4")
+
     test {
         useJUnitPlatform()
     }
